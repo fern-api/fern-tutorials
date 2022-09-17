@@ -1,0 +1,122 @@
+{
+    "info": {
+        "name": "api",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "origin",
+            "value": "http://localhost:8080",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "MoviesService",
+            "item": [
+                {
+                    "name": "createMovie",
+                    "request": {
+                        "description": "Add a movie to the database",
+                        "url": {
+                            "raw": "{{origin}}/movies/create-movie",
+                            "host": [
+                                "{{origin}}"
+                            ],
+                            "path": [
+                                "movies",
+                                "create-movie"
+                            ],
+                            "query": []
+                        },
+                        "header": [],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"example\",\n    \"rating\": 0\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Successful createMovie",
+                            "code": 200,
+                            "originalRequest": {
+                                "description": "Add a movie to the database",
+                                "url": {
+                                    "raw": "{{origin}}/movies/create-movie",
+                                    "host": [
+                                        "{{origin}}"
+                                    ],
+                                    "path": [
+                                        "movies",
+                                        "create-movie"
+                                    ],
+                                    "query": []
+                                },
+                                "header": [],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"title\": \"example\",\n    \"rating\": 0\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": "\"example\"",
+                            "_postman_previewlanguage": "json"
+                        }
+                    ]
+                },
+                {
+                    "name": "getMovie",
+                    "request": {
+                        "url": {
+                            "raw": "{{origin}}/movies/:movieId",
+                            "host": [
+                                "{{origin}}"
+                            ],
+                            "path": [
+                                "movies",
+                                ":movieId"
+                            ],
+                            "query": []
+                        },
+                        "header": [],
+                        "method": "GET"
+                    },
+                    "response": [
+                        {
+                            "name": "Successful getMovie",
+                            "code": 200,
+                            "originalRequest": {
+                                "url": {
+                                    "raw": "{{origin}}/movies/:movieId",
+                                    "host": [
+                                        "{{origin}}"
+                                    ],
+                                    "path": [
+                                        "movies",
+                                        ":movieId"
+                                    ],
+                                    "query": []
+                                },
+                                "header": [],
+                                "method": "GET"
+                            },
+                            "body": "{\n    \"id\": \"example\",\n    \"title\": \"example\",\n    \"rating\": 0\n}",
+                            "_postman_previewlanguage": "json"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
